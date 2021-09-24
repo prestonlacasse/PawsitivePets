@@ -1,1 +1,25 @@
-﻿<h1>Shop Our Store</h1>
+﻿@model IEnumerable<PawsitivePets.Models.Category>
+@{ ViewData["Title"] = "Categories"; }
+
+<h1>Shop Our Store</h1>
+
+<ul>
+    @foreach (var c in Model)
+            {
+                <li>
+                    <a asp-controller="Categories" asp-action="Browse" asp-route-category="@c.Name">
+                        @c.Name
+                    </a>
+                </li>
+            }
+
+    @*<li>
+            <a asp-controller="Categories" asp-action="Browse" asp-route-category="Category 1">Category 1</a>
+        </li>
+        <li>
+            <a asp-controller="Categories" asp-action="Browse" asp-route-category="Category 2">Category 2</a>
+        </li>
+        <li>
+            <a asp-controller="Categories" asp-action="Browse" asp-route-category="Category 3">Category 3</a>
+        </li>*@
+</ul>
